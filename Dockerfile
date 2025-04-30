@@ -1,0 +1,11 @@
+from docker-0.unsee.tech/vaultwarden/server
+
+run mkdir -p --mode=0755 /usr/share/keyrings
+run curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
+run echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main' | tee /etc/apt/sources.list.d/cloudflared.list
+run apt-get update
+run apt-get install cloudflared -y
+
+copy start2.sh /start2.sh
+
+cmd /start2.sh
