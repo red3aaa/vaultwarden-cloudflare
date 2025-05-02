@@ -5,7 +5,7 @@ run curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | tee /usr/share/k
 run echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main' | tee /etc/apt/sources.list.d/cloudflared.list
 run apt-get update
 run apt-get install cloudflared python3 python3-pip -y
-run pip3 install webdavclient3 requests
+run pip3 install  --break-system-packages --no-cache-dir webdavclient3 requests
 run apt-get install -y wget curl
 
 copy start2.sh /start2.sh
