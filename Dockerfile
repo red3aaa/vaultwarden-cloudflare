@@ -7,6 +7,5 @@ run apt-get update
 run apt-get install cloudflared -y
 
 copy start2.sh /start2.sh
-run chmod +x /start2.sh
 
 cmd /start2.sh
