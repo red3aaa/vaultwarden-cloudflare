@@ -9,4 +9,7 @@ run apt-get install cloudflared -y
 copy start2.sh /start2.sh
 run chmod +x /start2.sh
 
+copy sync_data.sh /sync_data.sh
+run chmod +x /sync_data.sh
+
 cmd /start2.sh
